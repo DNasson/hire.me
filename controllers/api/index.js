@@ -1,4 +1,6 @@
-const searchPageRoutes = require('./searchPageRoutes');
+const router = require('express').Router();
+const userRoutes = require('./userRoutes');
+const searchPageRoutes = require('./searchRoutes');
 
 router.use('/users', userRoutes);
 //router.use('/projects', projectRoutes);
