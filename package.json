@@ -1,7 +1,7 @@
 {
-  "name": "crowd-funding",
+  "name": "job-search-app",
   "version": "1.0.0",
-  "description": "",
+  "description": "an app to search for a job",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
