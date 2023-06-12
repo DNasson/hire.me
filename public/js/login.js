@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 const loginFormHandler = async (event) => {
   event.preventDefault();
 
@@ -48,7 +46,6 @@ const signupFormHandler = async (event) => {
     }
   }
 };
->>>>>>> 261b65b ("initial commit")
 
 document.addEventListener('DOMContentLoaded', function () {
   const loginForm = document.getElementById('loginform');
