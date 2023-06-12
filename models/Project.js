@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Search extends Model {}
+class Project extends Model {}
 
-Search.init(
+Project.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -40,8 +40,8 @@ Search.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'search',
+    modelName: 'project',
   }
 );
 
-module.exports = Search;
+module.exports = Project;

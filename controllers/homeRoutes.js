@@ -1,11 +1,11 @@
 const router = require('express').Router();
-const { Search, User } = require('../models');
+const { Project, User } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
-    // Get all searchs and JOIN with user data
-    const searchData = await Search.findAll({
+    // Get all projects and JOIN with user data
+    const projectData = await Project.findAll({
       include: [
         {
           model: User
@@ -18,12 +18,12 @@ router.get('/', async (req, res) => {
     });
 
     // Serialize data so the template can read it
-    const searches = searchData.map((search) => search.get({ plain: true }));
+    const projects = projectData.map((project) => project.get({ plain: true }));
 
     // Pass serialized data and session flag into template
     // change main page below
     res.render('createAccount', { 
-      searches, 
+      projects,
       logged_in: req.session.logged_in 
     });
   } catch (err) {
@@ -31,9 +31,9 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/search/:id', async (req, res) => {
+router.get('/project/:id', async (req, res) => {
   try {
-    const searchData = await Search.findByPk(req.params.id, {
+    const projectData = await Project.findByPk(req.params.id, {
       include: [
         {
           model: User,
@@ -41,10 +41,10 @@ router.get('/search/:id', async (req, res) => {
       ],
     });
 
-    const search = searchData.get({ plain: true });
+    const project = projectData.get({ plain: true });
 
-    res.render('search', {
-      ...search,
+    res.render('project', {
+      ...project,
       logged_in: req.session.logged_in
     });
   } catch (err) {
@@ -53,17 +53,17 @@ router.get('/search/:id', async (req, res) => {
 });
 
 // Use withAuth middleware to prevent access to route
-router.get('/profile', withAuth, async (req, res) => {
+router.get('/user', withAuth, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
-      include: [{ model: search }],
+      include: [{ model: Project }],
     });
 
     const user = userData.get({ plain: true });
 
-    res.render('profile', {
+    res.render('user', {
       ...user,
       logged_in: true
     });
@@ -75,7 +75,7 @@ router.get('/profile', withAuth, async (req, res) => {
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
-    res.redirect('/searchPage');
+    res.redirect('../searchPage');
     return;
   }
 

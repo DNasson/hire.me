@@ -5,7 +5,7 @@ This Job Search Application is a full-stack web application designed to assist u
 ## Table of Contents
 
 - [Overview](#overview)
-- [search Requirements](#search-requirements)
+- [Project Requirements](#project-requirements)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Technologies Used](#technologies-used)
@@ -19,11 +19,11 @@ This Job Search Application is a full-stack web application designed to assist u
 
 ## Overview
 
-searchs play a crucial role in the journey of becoming a full-stack web developer. This search is designed to showcase your collaborative skills and coding abilities, serving as a focal point of your portfolio. By creating a real-world full-stack application using the technologies and principles learned throughout the boot camp, you can demonstrate your capabilities to potential employers.
+Projects play a crucial role in the journey of becoming a full-stack web developer. This project is designed to showcase your collaborative skills and coding abilities, serving as a focal point of your portfolio. By creating a real-world full-stack application using the technologies and principles learned throughout the boot camp, you can demonstrate your capabilities to potential employers.
 
-## search Requirements
+## Project Requirements
 
-How this search meets requirements:
+How this project meets requirements:
 
 - Utilize Node.js and Express.js to create a RESTful API.
 - Use Handlebars.js as the template engine.
@@ -45,7 +45,7 @@ How this search meets requirements:
    git clone https://github.com/BrockHanni/hire.me--proj2
    
 
-2. Change to the search's root directory:
+2. Change to the project's root directory:
 
    cd hire.me--proj2
   
@@ -107,7 +107,7 @@ hire.me--proj2/
 ├── controllers/
 │   ├── api/
 │     ├── index.js/
-│     ├── searchRoutes.js/
+│     ├── projectRoutes.js/
 │     └── userRoutes.js/
 │   ├── homeRoutes.js/
 │   └── index.js/
@@ -120,7 +120,7 @@ hire.me--proj2/
 │   └── searchPage.html/
 ├── models/
 │   ├── index.js/
-│   ├── search.js/
+│   ├── Project.js/
 │   └── User.js/
 ├── node_modules/
 ├── public/
@@ -139,7 +139,7 @@ hire.me--proj2/
 │     ├── main.handlebars/
 │   ├── homepage.handlebars/
 │   ├── login.handlebars
-│   └── search.handlebars/
+│   └── project.handlebars/
 ├── .env/
 ├── package-lock.json/
 ├── package.json
@@ -166,7 +166,7 @@ Danielle Memmott
 
 ## License
 
-This search does not currently utilize a license.
+This project does not currently utilize a license.
 
 ## Contact
 

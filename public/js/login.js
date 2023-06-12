@@ -4,15 +4,15 @@ const loginFormHandler = async (event) => {
   // Collect values from the login form
   const email = document.querySelector('#emailInput').value.trim();
   const password = document.querySelector('#passwordInput').value.trim();
+  console.log("loginFormHandler");
 
   if (!email || !password) {
     // Display an error message to the user
     alert('Please enter your email and password.');
     return; // Stop the function execution if validation fails
   }
-
   // Send a POST request to the API endpoint
-  const response = await fetch('/api/users', {
+  const response = await fetch('/api/users/login', {
     method: 'POST',
     body: JSON.stringify({ email, password }),
     headers: { 'Content-Type': 'application/json' },
